@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Space-Mono';
+    font-weight: 400;
+    font-style: normal;
+    src: url('./space-mono/SpaceMono-Regular.woff') format('woff'),
+        url('./space-mono/SpaceMono-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Space-Mono';
+    font-weight: 700;
+    font-style: normal;
+    src: url('./space-mono/SpaceMono-Bold.woff') format('woff'),
+        url('./space-mono/SpaceMono-Bold.woff2') format('woff2');
+}
