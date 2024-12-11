@@ -1,13 +1,28 @@
 import styles from './form.module.scss';
 import SearchIcon from '../../images/search-icon.svg';
+import { useFormWithValidation } from '../../hooks/useFormWidthValidation';
+import { getUserData } from '../../utils/api';
 
 const Form = () => {
+    const { values, handleChange } = useFormWithValidation();
+
+    function submitForm(evt) {
+        evt.preventDefault();
+        getUserData(values.userName)
+        .then(res=> console.log(res.data))
+        .catch(err => console.log(err))
+    };
+
     return (
-        <form className={ styles.form }>
+        <form className={ styles.form } onSubmit={ submitForm }>
             <img className={ styles.icon } src={ SearchIcon } />
             <div className={ styles.container }>
-                <input className={ styles.input } type="text" placeholder='Search GitHub username' />
-                <button className={ styles.button } type='submit'>Search</button>    
+                <input className={ styles.input }
+                    name='userName'
+                    type="text" placeholder='Введите имя пользователя на GitHub' 
+                    onChange={ handleChange }
+                />
+                <button className={ styles.button } type='submit'>Найти</button>
             </div>
         </form>
     )
