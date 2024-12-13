@@ -3,6 +3,17 @@ import { GET_USER_DATA, GET_USER_DATA_SUCCESS, GET_USER_DATA_FAILED } from "./ac
 const initialState = {
     user: {
         name: 'The Octocat',
+        login: 'octocat',
+        avatar_url: 'https://avatars.githubusercontent.com/u/583231?v=4',
+        created_at: '25 Jan 2011',
+        bio: 'This profile has o bio',
+        public_repos: 8,
+        followers: 5276,
+        following: 9,
+        location: 'San Francisco',
+        twitter_username: 'Not Available',
+        blog: 'https://github.blog',
+        company: 'github'
     },
     feedRequest: false,
     feedFailed: false,

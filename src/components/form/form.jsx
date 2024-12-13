@@ -4,13 +4,15 @@ import { useFormWithValidation } from '../../hooks/useFormWidthValidation';
 import { getUserData } from '../../utils/api';
 
 const Form = () => {
-    const { values, handleChange } = useFormWithValidation();
+    const { values, handleChange } = useFormWithValidation({userName: ''});
 
     function submitForm(evt) {
         evt.preventDefault();
-        getUserData(values.userName)
-        .then(res=> console.log(res.data))
-        .catch(err => console.log(err))
+        if(values.userName) {
+            getUserData(values.userName)
+            .then(res=> console.log(res.data))
+            .catch(err => console.log(err))
+        }
     };
 
     return (
@@ -19,10 +21,10 @@ const Form = () => {
             <div className={ styles.container }>
                 <input className={ styles.input }
                     name='userName'
-                    type="text" placeholder='Введите имя пользователя на GitHub' 
+                    type="text" placeholder='Введите имя пользователя GitHub' 
                     onChange={ handleChange }
                 />
-                <button className={ styles.button } type='submit'>Найти</button>
+                <button className={ `${styles.button }` } type='submit'>Найти</button>
             </div>
         </form>
     )
