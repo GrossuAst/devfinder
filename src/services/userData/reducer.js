@@ -4,6 +4,7 @@ const initialState = {
     user: {
         name: 'The Octocat',
         login: 'octocat',
+        html_url: "https://github.com/octocat",
         avatar_url: 'https://avatars.githubusercontent.com/u/583231?v=4',
         created_at: '25 Jan 2011',
         bio: 'This profile has o bio',
