@@ -13,7 +13,7 @@ const UserInfo = () => {
                 <div className={ styles.container } >
                     <div className={ styles.nameContainer }>
                         <p className={ styles.name }>The Octocat</p>
-                        <a className={ styles.loginLink } href={ user.html_url }>{`${'@' + user.login}`}</a>
+                        <a className={ styles.loginLink } href={ user.html_url } target="_blank">{`${'@' + user.login}`}</a>
                     </div>
                     <p className={ styles.joined }>
                         { `${'Joined' + " " + "25" + " " + 'Jan 2011'}` }

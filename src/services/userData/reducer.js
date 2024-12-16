@@ -35,7 +35,19 @@ export const userDataReducer = (state = initialState, action) => {
                 feedRequest: false,
                 feedFailed: false,
                 user: {
-                    name: data.name
+                    name: data.name,
+                    login: data.login,
+                    html_url: data.html_url,
+                    avatar_url: data.avatar_url,
+                    created_at: data.created_at,
+                    bio: data.bio,
+                    public_repos: data.public_repos,
+                    followers: data.followers,
+                    following: data.following,
+                    location: data.location,
+                    twitter_username: data.twitter_username,
+                    blog: data.blog,
+                    company: data.company
                 }
             };
         case GET_USER_DATA_FAILED: 

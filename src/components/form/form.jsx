@@ -1,18 +1,18 @@
 import styles from './form.module.scss';
 import SearchIcon from '../../images/search-icon.svg';
 import { useFormWithValidation } from '../../hooks/useFormWidthValidation';
-import { getUserData } from '../../utils/api';
+import { updateUser } from '../../services/userData/action';
+import { useDispatch } from 'react-redux';
 
 const Form = () => {
+    const dispatch = useDispatch();
     const { values, handleChange } = useFormWithValidation({userName: ''});
 
     function submitForm(evt) {
         evt.preventDefault();
         if(values.userName) {
-            getUserData(values.userName)
-            .then(res=> console.log(res.data))
-            .catch(err => console.log(err))
-        }
+            dispatch(updateUser(values.userName))
+        };
     };
 
     return (
