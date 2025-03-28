@@ -1,6 +1,6 @@
 import styles from './main.module.scss';
-import Form from '../form/form';
-import UserInfo from '../user-info/user-info';
+import Form from '../form';
+import UserInfo from '../user-info';
 
 const Main = () => {
     return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './app.module.scss';
 import Header from '../header';
-import Main from '../main/main';
+import Main from '../main';
 import { useSelector, shallowEqual } from 'react-redux';
 import { useEffect } from 'react';
 

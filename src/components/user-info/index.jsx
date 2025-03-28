@@ -1,5 +1,6 @@
 import styles from './user-info.module.scss';
 import { useSelector, shallowEqual } from 'react-redux';
+import ActivityInfo from '../activity-info';
 
 const UserInfo = () => {
     const { user } = useSelector((store) => ({
@@ -27,10 +28,8 @@ const UserInfo = () => {
                         { formatDate(user.created_at) }
                     </p>
                 </div>
-                <div className={ styles.activityInfo }>
-
-                </div>
             </div>
+            <ActivityInfo />
         </section>
     )
 };
