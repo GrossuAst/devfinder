@@ -19,10 +19,9 @@ export function updateUser(userName) {
                 }
             })
             .catch((err) => {
-
-            })
-            .finally(() => {
-
+                dispatch({
+                    type: GET_USER_DATA_FAILED
+                })
             })
     }
-}
+};

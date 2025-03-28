@@ -1,7 +1,7 @@
 import styles from './form.module.scss';
 import SearchIcon from '../../images/search-icon.svg';
 import { useFormWithValidation } from '../../hooks/useFormWidthValidation';
-import { updateUser } from '../../services/userData/action';
+import { updateUser } from '../../services/user-data/action';
 import { useDispatch } from 'react-redux';
 
 const Form = () => {
@@ -21,10 +21,10 @@ const Form = () => {
             <div className={ styles.container }>
                 <input className={ styles.input }
                     name='userName'
-                    type="text" placeholder='Введите имя пользователя GitHub' 
+                    type="text" placeholder='Search GitHub username' 
                     onChange={ handleChange }
                 />
-                <button className={ `${styles.button }` } type='submit'>Найти</button>
+                <button className={ `${styles.button }` } type='submit'>Search</button>
             </div>
         </form>
     )

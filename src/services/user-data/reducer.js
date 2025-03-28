@@ -18,6 +18,7 @@ const initialState = {
     },
     feedRequest: false,
     feedFailed: false,
+    isLoading: false,
 };
 
 export const userDataReducer = (state = initialState, action) => {
@@ -28,12 +29,14 @@ export const userDataReducer = (state = initialState, action) => {
                 ...state,
                 feedRequest: true,
                 feedFailed: false,
+                isLoading: true,
             };
         case GET_USER_DATA_SUCCESS: 
             return {
                 ...state,
                 feedRequest: false,
                 feedFailed: false,
+                isLoading: false,
                 user: {
                     name: data.name,
                     login: data.login,
@@ -54,7 +57,8 @@ export const userDataReducer = (state = initialState, action) => {
             return {
                 ...state,
                 feedRequest: false,
-                feedFailed: true
+                feedFailed: true,
+                isLoading: false
             };
         default:
             return state;

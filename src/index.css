@@ -1,7 +1,6 @@
 @import url('./fonts/fonts.css');
 
 body {
-  background-color: rgb(20, 29, 46);
   margin: 0;
   font-family: 'Space-Mono', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -9,6 +8,14 @@ body {
   box-sizing: border-box;
   padding-left: 100px;
   padding-right: 100px;
+}
+
+body.dark {
+  background-color: rgb(20, 29, 46) !important; 
+}
+
+body.light {
+  background-color: white !important;
 }
 
 code {

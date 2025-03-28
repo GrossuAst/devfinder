@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
-import { userDataReducer } from './userData/reducer';
+import { userDataReducer } from './user-data/reducer';
+import { appOptionsReducer } from './app-options/reducer';
 
 export const rootReducer = combineReducers({
-    user: userDataReducer
+    user: userDataReducer,
+    options: appOptionsReducer
 });
