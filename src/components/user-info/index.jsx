@@ -1,6 +1,7 @@
 import styles from './user-info.module.scss';
 import { useSelector, shallowEqual } from 'react-redux';
 import ActivityInfo from '../activity-info';
+import Social from '../social';
 
 const UserInfo = () => {
     const { user } = useSelector((store) => ({
@@ -30,6 +31,7 @@ const UserInfo = () => {
                 </div>
             </div>
             <ActivityInfo />
+            <Social />
         </section>
     )
 };
