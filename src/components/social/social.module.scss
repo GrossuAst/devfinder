@@ -5,9 +5,35 @@
     // flex-direction: column;
     justify-self: right;
     color: rgb(255, 255, 255);
-    margin: 0;
+    margin: 20px 0 0 0;
+    justify-content: space-between;
+    gap: 30px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-right: 10px;
+    flex-wrap: wrap;
 
     .listItem {
-        
+        display: flex;
+        gap: 13px;
+        // align-items: center;
+        justify-items: center;
+        flex-basis: 40%;
+
+        .icon {
+            height: 25px;
+            width: 25px;
+
+        }
+
+        .textValue {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .textValueUnactive {
+            color: rgb(143, 150, 163);
+        }
     }
 }
