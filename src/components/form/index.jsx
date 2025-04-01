@@ -2,11 +2,16 @@ import styles from './form.module.scss';
 import SearchIcon from '../../images/search-icon.svg';
 import { useFormWithValidation } from '../../hooks/useFormWidthValidation';
 import { updateUser } from '../../services/user-data/action';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 
 const Form = () => {
     const dispatch = useDispatch();
     const { values, handleChange } = useFormWithValidation({userName: ''});
+
+    const { error, isLoading } = useSelector((store) => ({
+        error: store.user.feedFailed,
+        isLoading: store.user.isLoading
+    }), shallowEqual);
 
     function submitForm(evt) {
         evt.preventDefault();
@@ -19,12 +24,13 @@ const Form = () => {
         <form className={ styles.form } onSubmit={ submitForm }>
             <img className={ styles.icon } src={ SearchIcon } />
             <div className={ styles.container }>
-                <input className={ styles.input }
+                <input className={ `${ styles.input } ${ error && !isLoading && styles.inputError }` }
                     name='userName'
                     type="text" placeholder='Search GitHub username' 
                     onChange={ handleChange }
                 />
-                <button className={ `${styles.button }` } type='submit'>Search</button>
+                <button className={ `${ styles.button } ` } type='submit'>Search</button>
+                { error && !isLoading && (<p className={ styles.errorText }>No result</p>) }
             </div>
         </form>
     )

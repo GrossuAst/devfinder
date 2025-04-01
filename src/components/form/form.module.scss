@@ -16,6 +16,7 @@
         gap: 4px;
         margin-left: 8px;
         width: 100%;
+        position: relative;
 
         .input {
             background: none;
@@ -26,11 +27,15 @@
             padding: 0;
             font-family: 'Space-Mono', sans-serif;
             width: 100%;
-        }
+        }            
+        
+        .inputError {
+                border-bottom: 1px solid rgb(255, 0, 0);
+            }
 
         .input:focus {
             outline: none;
-            border-bottom: 1px solid white;
+            // border-bottom: 1px solid white;
         }
 
         .button {
@@ -53,6 +58,20 @@
         .disabledButton {
             cursor: default;
             background-color: rgb(212, 212, 212);
+        }
+
+        .errorTextVisible {
+            display: block;
+        }
+
+        .errorText {
+            // display: none;
+            right: 150px;
+            top: 15px;
+            font-size: 14px;
+            margin: 0;
+            color: rgb(255, 0, 0);
+            position: absolute;
         }
     }
 

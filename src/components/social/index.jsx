@@ -17,11 +17,6 @@ const Social = () => {
     }), shallowEqual);
 
     return (        
-        //     1 location
-        //     2 twitter_username
-        //     3 blog
-        //     4 company
-        // <div>
             <ul className={ styles.list }>
                 <li className={ styles.listItem }>
                     <img src={ user.location ? LocationIconDarkTheme : LocationIconDarkThemeUnactive } className={ styles.icon } />
@@ -48,7 +43,6 @@ const Social = () => {
                     </p>
                 </li>
             </ul>
-        // </div>
     )
 };
 
