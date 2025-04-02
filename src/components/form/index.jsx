@@ -28,6 +28,8 @@ const Form = () => {
                     name='userName'
                     type="text" placeholder='Search GitHub username' 
                     onChange={ handleChange }
+                    maxLength={ 25 }
+                    minLength={ 1 }
                 />
                 <button className={ `${ styles.button } ` } type='submit'>Search</button>
                 { error && !isLoading && (<p className={ styles.errorText }>No result</p>) }

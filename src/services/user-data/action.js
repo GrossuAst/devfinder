@@ -17,10 +17,14 @@ export function updateUser(userName) {
                         payload: res.data
                     })
                 }
+                else {
+                    console.log(res)
+                }
             })
             .catch((err) => {
                 dispatch({
-                    type: GET_USER_DATA_FAILED
+                    type: GET_USER_DATA_FAILED,
+                    payload: err.message
                 })
             })
     }

@@ -2,10 +2,15 @@ import styles from './user-info.module.scss';
 import { useSelector, shallowEqual } from 'react-redux';
 import ActivityInfo from '../activity-info';
 import Social from '../social';
+import ErrorMessage from '../error-message';
+import Preloader from '../ui/preloader';
 
 const UserInfo = () => {
-    const { user } = useSelector((store) => ({
-        user: store.user.user
+    const { user, isLoading, feedFailed, errorMessage } = useSelector((store) => ({
+        user: store.user.user,
+        isLoading: store.user.isLoading,
+        feedFailed: store.user.feedFailed,
+        errorMessage: store.user.message
     }), shallowEqual);
 
     function formatDate(source) {
@@ -18,20 +23,28 @@ const UserInfo = () => {
 
     return (
         <section className={ styles.content }>
-            <div className={ styles.mainInfo }>
-                <img src={ user.avatar_url } className={ styles.avatar } />
-                <div className={ styles.container } >
-                    <div className={ styles.nameContainer }>
-                        <p className={ styles.name }>{user.name}</p>
-                        <a className={ styles.loginLink } href={ user.html_url } target="_blank">{`${'@' + user.login}`}</a>
-                    </div>
-                    <p className={ styles.joined }>
-                        { formatDate(user.created_at) }
-                    </p>
-                </div>
-            </div>
-            <ActivityInfo />
-            <Social />
+            {
+                !isLoading && !feedFailed ? 
+                (
+                    <>
+                        <div className={ styles.mainInfo }>
+                            <img src={ user.avatar_url } className={ styles.avatar } />
+                            <div className={ styles.container } >
+                            <div className={ styles.nameContainer }>
+                                <p className={ styles.name }>{user.name}</p>
+                                <a className={ styles.loginLink } href={ user.html_url } target="_blank">{`${'@' + user.login}`}</a>
+                            </div>
+                                <p className={ styles.joined }>
+                                    { formatDate(user.created_at) }
+                                </p>
+                            </div>
+                        </div>
+                        <ActivityInfo />
+                        <Social />
+                    </>
+                ) : isLoading ?
+                <Preloader /> : feedFailed && <ErrorMessage />
+            }
         </section>
     )
 };
