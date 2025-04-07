@@ -15,7 +15,7 @@ body.dark {
 }
 
 body.light {
-  background-color: white !important;
+  background-color: rgb(245, 247, 255) !important;
 }
 
 code {

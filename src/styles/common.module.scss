@@ -1,6 +1,6 @@
-// @import url('./variables.module.scss');
 @import './variables.module.scss';
 
+// ___Темная тема___
 .primaryTextThemeDark {
     color: $dark-text-primary;
 }
@@ -9,6 +9,16 @@
     
 }
 
+.backgroundThemeDark {
+    background-color: rgb(30, 43, 72);
+}
+
+.backroundThemeDarkSecondary {
+    background-color: rgb(20, 29, 46);
+}
+
+// ___Светлая тема___
+
 .primaryTextThemeLight {
     color: $light-text-primary;
 }
@@ -16,3 +26,12 @@
 .secondaryTextThemeLight {
 
 }
+
+.backgroundThemeLight {
+    background-color: rgb(255, 255, 255);
+}
+
+.backgroundThemeLightSecondary {
+    background-color: rgb(245, 247, 255);
+}
+

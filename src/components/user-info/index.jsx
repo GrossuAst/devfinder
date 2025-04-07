@@ -24,7 +24,7 @@ const UserInfo = () => {
     };
 
     return (
-        <section className={ styles.content }>
+        <section className={ `${styles.content} ${ theme === 'dark' ? commonStyles.backgroundThemeDark : commonStyles.backgroundThemeLight }` }>
             {
                 !isLoading && !feedFailed ? 
                 (

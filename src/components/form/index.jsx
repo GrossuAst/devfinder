@@ -1,4 +1,5 @@
 import styles from './form.module.scss';
+import commonStyles from '../../styles/common.module.scss';
 import SearchIcon from '../../images/search-icon.svg';
 import { useFormWithValidation } from '../../hooks/useFormWidthValidation';
 import { updateUser } from '../../services/user-data/action';
@@ -8,9 +9,10 @@ const Form = () => {
     const dispatch = useDispatch();
     const { values, handleChange } = useFormWithValidation({userName: ''});
 
-    const { error, isLoading } = useSelector((store) => ({
+    const { error, isLoading, theme } = useSelector((store) => ({
         error: store.user.feedFailed,
-        isLoading: store.user.isLoading
+        isLoading: store.user.isLoading,
+        theme: store.options.theme
     }), shallowEqual);
 
     function submitForm(evt) {
@@ -21,7 +23,7 @@ const Form = () => {
     };
 
     return (
-        <form className={ styles.form } onSubmit={ submitForm }>
+        <form className={ `${ styles.form } ${ theme === 'dark' ? commonStyles.backgroundThemeDark : commonStyles.backgroundThemeLight }` } onSubmit={ submitForm }>
             <img className={ styles.icon } src={ SearchIcon } />
             <div className={ styles.container }>
                 <input className={ `${ styles.input } ${ error && !isLoading && styles.inputError }` }
