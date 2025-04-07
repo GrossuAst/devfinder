@@ -1,3 +1,5 @@
+@import '../../styles/common.module.scss';
+
 .content {
     box-sizing: border-box;
     padding: 48px;
@@ -19,7 +21,6 @@
             .nameContainer {
                 .name {
                     margin: 0;
-                    color: rgb(255, 255, 255);
                     font-size: 26px;
                     font-weight: 700;
                 }
@@ -38,7 +39,6 @@
 
             .joined {
                 margin: 0;
-                color: rgb(255, 255, 255);
                 line-height: 25px;
                 font-size: 16px;
             }

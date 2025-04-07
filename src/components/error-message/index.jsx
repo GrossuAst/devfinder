@@ -5,9 +5,8 @@ const ErrorMessage = () => {
     const { message } = useSelector((store) => (
         { message: store.user.error }
     ), shallowEqual);
-    console.log(message)
     return (
-        <p>
+        <p className={ styles.message }>
             { message && message }
         </p>
     )
