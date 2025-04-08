@@ -10,20 +10,20 @@ const ActivityInfo = () => {
     
     return (
         <div className={ styles.activityInfo }>
-            <h3 className={ styles.title }>This profile has o bio</h3>
+            <h3 className={ `${ styles.title } ${ theme === 'light' && commonStyles.secondaryTextThemeLight }` }>This profile has o bio</h3>
             <div>
                 <ul className={ `${ styles.list } ${ theme === 'dark' ? commonStyles.backroundThemeDarkSecondary : commonStyles.backgroundThemeLightSecondary }` }>
-                    <li className={ styles.listItem }>
+                    <li className={ `${ styles.listItem } ${ theme === 'light' && commonStyles.secondaryTextThemeLight }` }>
                         <h6 className={ styles.itemTitle }>Public repos</h6>
-                        <p className={ styles.activityValue }>{ user.public_repos }</p>
+                        <p className={ `${ styles.activityValue } ${ theme === 'light' && commonStyles.primaryTextThemeLight}` }>{ user.public_repos }</p>
                     </li>
-                    <li className={ styles.listItem }>
+                    <li className={ `${ styles.listItem } ${ theme === 'light' && commonStyles.secondaryTextThemeLight }` }>
                         <h6 className={ styles.itemTitle }>Followers</h6>
-                        <p className={ styles.activityValue }>{ user.followers }</p>
+                        <p className={ `${ styles.activityValue } ${ theme === 'light' && commonStyles.primaryTextThemeLight}` }>{ user.followers }</p>
                     </li>
-                    <li className={ styles.listItem }>
+                    <li className={ `${ styles.listItem } ${ theme === 'light' && commonStyles.secondaryTextThemeLight }` }>
                         <h6 className={ styles.itemTitle }>Following</h6>
-                        <p className={ styles.activityValue }>{ user.following }</p>
+                        <p className={ `${ styles.activityValue } ${ theme === 'light' && commonStyles.primaryTextThemeLight}` }>{ user.following }</p>
                     </li>
                 </ul>
                 <div className={ styles.social }>

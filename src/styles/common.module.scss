@@ -2,11 +2,11 @@
 
 // ___Темная тема___
 .primaryTextThemeDark {
-    color: $dark-text-primary;
+    color: rgb(255, 255, 255);
 }
 
 .secondaryTextThemeDark {
-    
+    color: rgb(143, 150, 163);
 }
 
 .backgroundThemeDark {
@@ -20,11 +20,11 @@
 // ___Светлая тема___
 
 .primaryTextThemeLight {
-    color: $light-text-primary;
+    color: rgb(42, 51, 65);
 }
 
 .secondaryTextThemeLight {
-
+    color: rgb(105, 124, 155);
 }
 
 .backgroundThemeLight {

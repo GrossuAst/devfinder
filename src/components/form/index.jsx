@@ -26,7 +26,12 @@ const Form = () => {
         <form className={ `${ styles.form } ${ theme === 'dark' ? commonStyles.backgroundThemeDark : commonStyles.backgroundThemeLight }` } onSubmit={ submitForm }>
             <img className={ styles.icon } src={ SearchIcon } />
             <div className={ styles.container }>
-                <input className={ `${ styles.input } ${ error && !isLoading && styles.inputError }` }
+                <input 
+                    className={ 
+                            `${ styles.input } 
+                            ${ theme === 'light' ? commonStyles.primaryTextThemeLight : commonStyles.primaryTextThemeDark } 
+                            ${ error && !isLoading && styles.inputError }` 
+                        }
                     name='userName'
                     type="text" placeholder='Search GitHub username' 
                     onChange={ handleChange }
